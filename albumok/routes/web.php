@@ -22,6 +22,7 @@ Route::get('admin/album', [AlbumAdminController::class, "index"])->name("album-a
 Route::get('admin/album/create', [AlbumAdminController::class, "create"])->name("album-admin.create");
 Route::post('admin/album', [AlbumAdminController::class, "store"])->name("album-admin.store");
 Route::get('/login', [AuthController::class, "login"])->name("auth.login");
-Route::get('/authenticate', [AuthController::class, "authenticate"])->name("auth.authenticate");
-Route::get('/register', [AuthController::class, "create"])->name("auth.create");
+Route::post('/authenticate', [AuthController::class, "authenticate"])->name("auth.authenticate");
+Route::get('/register', [RegisterController::class, "create"])->name("register.create");
 Route::post('/register', [RegisterController::class, "store"])->name("register.create");
+Route::post('/logout', [AuthController::class, "logout"])->name("auth.logout");

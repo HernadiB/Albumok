@@ -16,12 +16,15 @@ class AlbumAdminController extends Controller
 
     public function create()
     {
-
+        return view("album.create", [
+            "newAlbum" => Album::all()
+        ]);
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
+            "artist" => ["required", "string", "max:45"],
             "title" => ["required", "string", "max:45"],
             "released" => ["required", "integer"],
             "genre" => ["required", "string", "max:45"],
@@ -29,6 +32,8 @@ class AlbumAdminController extends Controller
             "sales" => ["required", "integer"],
             "cover" => ["required", "string", "max:100"]
         ]);
-        return Album::create($data);
+        $request->session()->flash("success", "Az album sikeresen feltöltve az adatbázisba.");
+        return redirect()->route("album-admin.index");
+        //return Album::create($data);
     }
 }

@@ -9,9 +9,12 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route("home")}}">Albums</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route("album-admin.create")}}">Új album</a>
+                </li>
                 @can("create-album")
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route("album.create")}}">Új tanuló</a>
+                        <a class="nav-link" href="{{route("album.create")}}">Új album</a>
                     </li>
                 @endcan
 
@@ -19,11 +22,12 @@
 
             @auth
                 <span class="navbar-text">
-                    Üdv {{\Illuminate\Support\Facades\Auth::user()->name}}
 
-                    <form class="d-flex" action="{{route("auth.logout")}}" method="post" >
+
+                    <form action="{{route("auth.logout")}}" method="post" >
                         @csrf
-                        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Kijelentkezés</button>
+                        Üdv {{\Illuminate\Support\Facades\Auth::user()->name}}
+                        <button class="btn btn-outline-danger my-2 mx-2 my-sm-0" type="submit">Kijelentkezés</button>
                     </form>
                 </span>
             @else

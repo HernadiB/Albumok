@@ -12,7 +12,7 @@
                     <img src="{{asset("img/" . $album->cover)}}" class="card-img-top img-thumbnail" alt="{{$album->cover}}">
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-warning w-100 my-3 mx-auto btn-outline-dark">Details</a>
+                    <a href="#" class="btn btn-warning w-100 details">Details</a>
                 </div>
             </div>
         @endforeach

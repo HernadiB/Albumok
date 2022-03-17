@@ -26,7 +26,7 @@
                     {{--                        <img src="{{asset('logo2.jpg')}}" class="card-img-top" alt="...">--}}
                     <div class="card-body">
                         <h5 class="card-title">Regisztráció</h5>
-                        {!! Form::open(['route' => 'register.store']) !!}
+                        {!! Form::open(['route' => 'register.create']) !!}
 
                         <div class="row mt-3">
                             <div class="col">

@@ -17,4 +17,10 @@ class Album extends Model
         "sales",
         "cover"
     ];
+
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class, "artist_id", "id");
+    }
+
 }

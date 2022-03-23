@@ -19,9 +19,7 @@ class RegisterController extends Controller
         $data = $request->validated();
         $data["password"] = Hash::make($data["password"]);
         User::create($data);
-
         $request->session()->flash("success", "Sikeres regisztrálás.");
-
         return redirect()->route("home");
     }
 }
